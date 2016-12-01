@@ -18,7 +18,7 @@ When you want to make changes happen on the page, you need to manipulate the DOM
 *After this workshop, developers will be able to:*
 
 - describe and draw the document object model (DOM) of a simple HTML document.
-- use the elements tab to view an manipulate the DOM and styling.
+- use the elements tab to view and manipulate the DOM and styling.
 - explain the relationship between JavaScript and jQuery and the benefits of using jQuery for DOM manipulation
 - select elements from the page using CSS Selectors and use jQuery to dynamically change the DOM
 
@@ -26,9 +26,9 @@ When you want to make changes happen on the page, you need to manipulate the DOM
 
 The Document Object Model or DOM is a key concept to understanding what a browser does with your HTML. The browser looks at your HTML and creates a "tree", much like a family tree of siblings, parents, and children. The `<html>` tag has two children, what are they?
 
-Draw the DOM tree for the following HTML:
+1. Draw the DOM tree for the following HTML:
 
-```html
+  ```html
   <!DOCTYPE html>
   <html>
     <head>
@@ -37,13 +37,43 @@ Draw the DOM tree for the following HTML:
     </head>
     <body>
       <p> This is an insightful paragraph </p>
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-      </ul>
     </body>
   </html>
-```
+  ```
+
+1. Answer the following questions about this HTML document:
+
+  ``` html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>My Site</title>
+    </head>
+    <body>
+      <header>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </header>
+
+      <section>  
+        <h1>Welcome to my site!</h1>
+        <img src="/static/say_cheese.jpg">
+        <p>Words and <a href="/">links</a></p>
+      </section>
+
+      <footer>
+        <small>Copyright 2015 Jon Doe.</small>
+      </footer>
+    </body>
+  </html>
+  ```
+  * How many children does `header` have?
+  * Name a direct child of the `p` element.
+  * Name a direct parent of the `p` element
+  * What is the parent of the `html` element?
 
 ## Intro to jQuery
 jQuery is just JavaScript! It was invented in 2005 and has made our lives as developers better ever since.
@@ -53,7 +83,7 @@ We use jQuery because it's:
 - Convenient: solves problems developers commonly face.
 - Less Buggy: ensures javascript DOM manipulation works the same, cross-browser.
 - Modern: brings javascript DOM manipulation into the 21st century.
-- Popular: 15.3% of all sites and 70.4% of the top 100k sites use jQuery! (see Builtwith.com).
+- Popular: 73.5% of the top 100k most viewed sites use jQuery! (see Builtwith.com).
 
 Sites like: css-tricks.com and jquery.com (!) include the jQuery library on their page. This means all you have to do is open up your Chrome Developer Console on one of those sites, and you can start playing with jQuery on the page!
 
@@ -93,9 +123,9 @@ As you're working with jQuery to manipulate DOM elements, you are almost always 
 - `$("CSS Selector").someJqueryMethodName()` - **getting** a value  
 - `$("CSS Selector").someJqueryMethodName(setterValue)` - **setting** a value
 
-For example, if you are viewing the home page on jQuery.com, then you can try the following in your Chrome Developer Console:  
-- `$('p').text()` -- **get** the text of the readme (it lives inside of an `article` tag)  
-- `$('p').text("Boo!")` -- **set** the text of the readme to "Boo!"
+For example, if you are viewing the home page on css-tricks.com, then you can try the following in your Chrome Developer Console:  
+- `$('a').text()` -- **get** the text of all of the links on the page
+- `$('a').text("Boo!")` -- **set** the text of all of the links on the page to "Boo!"
 
 Wowza!
 ![wow](https://cloud.githubusercontent.com/assets/6520345/13719043/1bdbe8ce-e7a5-11e5-96ac-ea05ad01df88.gif)
@@ -170,3 +200,7 @@ $('body').append($newDiv);
 var newDiv = document.createElement('div');
 document.body.appendChild(newDiv);
 ```
+
+## Training
+
+[jQuery DOM lab](https://github.com/sf-wdi-34/jquery-dom-lab)
